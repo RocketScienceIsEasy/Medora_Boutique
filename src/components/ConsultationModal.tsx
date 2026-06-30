@@ -71,22 +71,22 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="bg-warm-beige w-full max-w-lg rounded-3xl border border-light-sand/40 overflow-hidden shadow-2xl relative z-10 p-6 sm:p-8"
+            className="bg-warm-beige w-full max-w-md rounded-3xl border border-light-sand/40 shadow-2xl relative z-10 flex flex-col max-h-[90vh] overflow-hidden"
           >
             {/* Close Button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 p-2 bg-soft-cream/80 hover:bg-muted-gold text-olive-green hover:text-warm-beige rounded-full transition-colors cursor-pointer"
+              className="absolute top-4 right-4 p-2 bg-soft-cream/80 hover:bg-muted-gold text-olive-green hover:text-warm-beige rounded-full transition-colors cursor-pointer z-30"
               aria-label="Close modal"
             >
               <X className="w-4 h-4" />
             </button>
 
-            {/* Content */}
-            <div className="relative">
+            {/* Scrollable Content Wrapper */}
+            <div className="overflow-y-auto p-5 sm:p-6 w-full relative">
               {!isSubmitted ? (
                 <>
-                  <div className="text-center sm:text-left mb-6 pr-6">
+                  <div className="text-center sm:text-left mb-4 pr-6">
                     <span className="text-[10px] tracking-widest text-muted-gold uppercase font-sans font-semibold">
                       Bespoke Tailoring
                     </span>
@@ -98,14 +98,14 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-3">
                     {/* Name */}
                     <div>
                       <label htmlFor="modal-name" className="block text-[10px] font-semibold tracking-wider uppercase text-olive-green/80 font-sans">
                         Full Name *
                       </label>
                       <div className="relative mt-1">
-                        <User className="absolute left-3 top-3.5 w-4 h-4 text-olive-green/40" />
+                        <User className="absolute left-3 top-3 w-4 h-4 text-olive-green/40" />
                         <input
                           type="text"
                           name="name"
@@ -114,7 +114,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Your name"
-                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-3 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans"
+                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-2.5 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans"
                         />
                       </div>
                     </div>
@@ -125,7 +125,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         Phone / WhatsApp Number *
                       </label>
                       <div className="relative mt-1">
-                        <Phone className="absolute left-3 top-3.5 w-4 h-4 text-olive-green/40" />
+                        <Phone className="absolute left-3 top-3 w-4 h-4 text-olive-green/40" />
                         <input
                           type="tel"
                           name="phone"
@@ -134,7 +134,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="e.g. +91 98765 43210"
-                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-3 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans"
+                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-2.5 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans"
                         />
                       </div>
                     </div>
@@ -145,13 +145,13 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         Outfit Theme
                       </label>
                       <div className="relative mt-1">
-                        <Settings className="absolute left-3 top-3.5 w-4 h-4 text-olive-green/40" />
+                        <Settings className="absolute left-3 top-3 w-4 h-4 text-olive-green/40" />
                         <select
                           name="service"
                           id="modal-service"
                           value={formData.service}
                           onChange={handleChange}
-                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-3 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans appearance-none"
+                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-2.5 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans appearance-none"
                         >
                           <option value="custom-stitching">Custom Tailoring & Stitching</option>
                           <option value="designer-dresses">Designer Dress Design</option>
@@ -168,14 +168,14 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         Preferred Trial Date
                       </label>
                       <div className="relative mt-1">
-                        <Calendar className="absolute left-3 top-3.5 w-4 h-4 text-olive-green/40" />
+                        <Calendar className="absolute left-3 top-3 w-4 h-4 text-olive-green/40" />
                         <input
                           type="date"
                           name="date"
                           id="modal-date"
                           value={formData.date}
                           onChange={handleChange}
-                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-3 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans"
+                          className="w-full bg-soft-cream border border-light-sand/40 rounded-xl pl-10 pr-4 py-2.5 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans"
                         />
                       </div>
                     </div>
@@ -192,7 +192,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         value={formData.notes}
                         onChange={handleChange}
                         placeholder="e.g. A-line neck cut, set mundu custom border..."
-                        className="mt-1 w-full bg-soft-cream border border-light-sand/40 rounded-xl px-4 py-2.5 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans resize-none"
+                        className="mt-1 w-full bg-soft-cream border border-light-sand/40 rounded-xl px-4 py-2 text-sm text-olive-green focus:outline-none focus:border-muted-gold transition-colors font-sans resize-none"
                       />
                     </div>
 
@@ -200,14 +200,14 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center px-6 py-3.5 text-xs font-semibold tracking-widest text-warm-beige bg-olive-green hover:bg-olive-light disabled:bg-olive-green/60 rounded-full shadow-md hover:shadow-lg transition-all duration-300 uppercase cursor-pointer mt-2"
+                      className="w-full inline-flex items-center justify-center px-6 py-3 text-xs font-semibold tracking-widest text-warm-beige bg-olive-green hover:bg-olive-light disabled:bg-olive-green/60 rounded-full shadow-md hover:shadow-lg transition-all duration-300 uppercase cursor-pointer mt-1"
                     >
                       {isSubmitting ? 'Reserving...' : 'Book Consultation Slot'}
                     </button>
                   </form>
                 </>
               ) : (
-                <div className="py-8 text-center">
+                <div className="py-6 text-center">
                   <div className="mx-auto w-12 h-12 bg-olive-green text-warm-beige rounded-full flex items-center justify-center shadow-md mb-4">
                     <Check className="w-6 h-6" />
                   </div>

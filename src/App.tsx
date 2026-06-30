@@ -46,6 +46,9 @@ function App() {
             {/* Hero Banner */}
             <Hero onOpenConsultation={openConsultation} />
 
+            {/* About the Boutique Brand narrative */}
+            <About />
+
             {/* Grid of collections */}
             <Collections />
 
@@ -60,9 +63,6 @@ function App() {
 
             {/* Pinterest Masonry Gallery */}
             <Gallery />
-
-            {/* About the Boutique Brand narrative */}
-            <About />
 
             {/* Reviews & Accordion FAQs */}
             <Testimonials />

@@ -132,71 +132,71 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             </div>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Navigation Drawer */}
-        <div
-          className={`lg:hidden fixed inset-y-0 right-0 z-50 w-72 bg-warm-beige shadow-2xl border-l border-light-sand/20 transform transition-transform duration-300 ease-in-out ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="flex justify-between items-center px-6 py-5 border-b border-light-sand/20">
-            <div className="flex items-center space-x-1 pl-2">
-              <img 
-                src="/medora_logo.png" 
-                alt="Medora Logo" 
-                className="w-12 h-12 object-contain"
-              />
-              <div className="flex flex-col text-left">
-                <span className="text-lg tracking-widest text-olive-green uppercase font-serif font-semibold leading-none">
-                  Medora
-                </span>
-                <span className="text-[8px] tracking-[0.2em] text-muted-gold uppercase font-sans font-medium mt-1">
-                  Design Studio
-                </span>
-              </div>
+      {/* Mobile Navigation Drawer */}
+      <div
+        className={`lg:hidden fixed inset-y-0 right-0 z-50 w-72 bg-warm-beige shadow-2xl border-l border-light-sand/20 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex justify-between items-center px-6 py-5 border-b border-light-sand/20">
+          <div className="flex items-center space-x-1 pl-2">
+            <img 
+              src="/medora_logo.png" 
+              alt="Medora Logo" 
+              className="w-12 h-12 object-contain"
+            />
+            <div className="flex flex-col text-left">
+              <span className="text-lg tracking-widest text-olive-green uppercase font-serif font-semibold leading-none">
+                Medora
+              </span>
+              <span className="text-[8px] tracking-[0.2em] text-muted-gold uppercase font-sans font-medium mt-1">
+                Design Studio
+              </span>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-olive-green hover:text-muted-gold p-1"
-              aria-label="Close menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
           </div>
-
-          <div className="flex flex-col px-6 py-8 space-y-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-base font-medium text-olive-green/90 hover:text-muted-gold transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
-
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                onOpenConsultation();
-              }}
-              className="w-full inline-flex items-center justify-center px-5 py-3 text-sm font-semibold tracking-wider text-warm-beige bg-olive-green hover:bg-olive-light rounded-full shadow transition-all duration-300 uppercase mt-4"
-            >
-              <PhoneCall className="w-4 h-4 mr-2" />
-              Book Consultation
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-olive-green hover:text-muted-gold p-1"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
-        {/* Mobile drawer backdrop */}
-        {isOpen && (
-          <div
-            onClick={() => setIsOpen(false)}
-            className="lg:hidden fixed inset-0 z-40 bg-olive-green/20 backdrop-blur-xs transition-opacity duration-300"
-          />
-        )}
-      </nav>
+        <div className="flex flex-col px-6 py-8 space-y-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="text-base font-medium text-olive-green/90 hover:text-muted-gold transition-colors duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              onOpenConsultation();
+            }}
+            className="w-full inline-flex items-center justify-center px-5 py-3 text-sm font-semibold tracking-wider text-warm-beige bg-olive-green hover:bg-olive-light rounded-full shadow transition-all duration-300 uppercase mt-4"
+          >
+            <PhoneCall className="w-4 h-4 mr-2" />
+            Book Consultation
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile drawer backdrop */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          className="lg:hidden fixed inset-0 z-40 bg-olive-green/20 backdrop-blur-xs transition-opacity duration-300"
+        />
+      )}
     </>
   );
 };

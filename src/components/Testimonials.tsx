@@ -67,7 +67,7 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section id="testimonials" className="py-20 bg-soft-cream relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         
         {/* Review Highlights */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">

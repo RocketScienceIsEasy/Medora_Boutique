@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
   };
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden bg-soft-cream flex items-center justify-center pt-24 md:pt-32">
+    <section id="home" className="relative min-h-screen w-full overflow-hidden bg-soft-cream flex items-center justify-center pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-32 md:pb-24">
       {/* Parallax Background Image Container */}
       <motion.div 
         style={{ y: yBg, opacity: opacityBg }}
@@ -71,10 +71,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="bg-[#FAE8D2] border border-light-sand/30 p-8 sm:p-12 md:p-16 rounded-3xl shadow-lg max-w-2xl mx-auto"
+          className="bg-[#FAE8D2] border border-light-sand/30 p-6 sm:p-12 md:p-16 rounded-3xl shadow-lg max-w-2xl mx-auto -mt-6 sm:mt-0"
         >
           {/* Top Divider Decors */}
-          <div className="flex justify-center items-center space-x-2 mb-6">
+          <div className="flex justify-center items-center space-x-2 mb-4 sm:mb-6">
             <div className="w-8 h-[1px] bg-muted-gold/50" />
             <span className="text-xs tracking-[0.35em] text-muted-gold font-sans font-semibold uppercase">
               Boutique Design Studio
@@ -91,14 +91,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
           </p>
 
           {/* Seam divider */}
-          <div className="seam-divider my-6 mx-auto w-3/4" />
+          <div className="seam-divider my-4 sm:my-6 mx-auto w-3/4" />
 
           <p className="text-sm sm:text-base md:text-lg text-olive-green/80 max-w-md mx-auto font-sans leading-relaxed">
             Beautifully stitched outfits crafted specifically for you, right here in the heart of Kothamangalam.
           </p>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
             <button
               onClick={handleScrollToCollections}
               className="w-full sm:w-auto px-8 py-3.5 text-xs font-semibold tracking-widest text-warm-beige bg-olive-green hover:bg-olive-light rounded-full shadow-md hover:shadow-lg transition-all duration-300 uppercase cursor-pointer"

@@ -97,9 +97,9 @@ export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-6 text-center"
         >
-          <h1 className="text-3xl tracking-widest text-olive-green uppercase font-serif font-semibold">
+          <div className="text-3xl tracking-widest text-olive-green uppercase font-serif font-semibold" role="img" aria-label="Medora">
             Medora
-          </h1>
+          </div>
           <p className="mt-2 text-xs tracking-[0.25em] text-muted-gold uppercase font-sans font-medium">
             Boutique Design Studio
           </p>
